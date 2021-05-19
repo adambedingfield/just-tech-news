@@ -20,9 +20,11 @@ const sess = {
   })
 };
 
+const helpers = require('./utils/helpers');
+
 app.use(session(sess));
 
-const hbs = exphbs.create({});
+const hbs = exphbs.create({ helpers });
 
 // set template engine
 app.engine('handlebars', hbs.engine);
